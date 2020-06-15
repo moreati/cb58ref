@@ -47,8 +47,10 @@ def cb58decode(v):
     result = b58decode(v)
     if result is None:
         raise DecodeError
-    if result[-4:] == cb58checksum(result[:-4]):
-        return result[-4:]
+    body = result[:-4]
+    checksum = result[-4:]
+    if checksum == cb58checksum(body):
+        return body
     else:
         raise ChecksumError
 
