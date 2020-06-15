@@ -7,11 +7,31 @@ __version__ = '0.1.0'
 from .base58 import SHA256, b58chars as cb58chars, b58decode, b58encode
 
 __all__ = [
+    'Error',
+    'ChecksumError',
+    'DecodeError',
+    'EncodeError',
     'cb58chars',
     'cb58checksum',
     'cb58decode',
     'cb58encode',
 ]
+
+
+class Error(ValueError):
+    pass
+
+
+class DecodeError(Error):
+    pass
+
+
+class ChecksumError(DecodeError):
+    pass
+
+
+class EncodeError(Error):
+    pass
 
 
 def cb58checksum(v):
@@ -26,11 +46,11 @@ def cb58decode(v):
     """
     result = b58decode(v)
     if result is None:
-        return None
+        raise DecodeError
     if result[-4:] == cb58checksum(result[:-4]):
         return result[-4:]
     else:
-        return None
+        raise ChecksumError
 
 
 def cb58encode(v):
