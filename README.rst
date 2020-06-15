@@ -17,7 +17,7 @@ cb58ref
      :alt: Updates
 
 cb58ref is a reference implementation of the CB58 encoding used by `AVA`_.
-CB58 is similar to the `base58check`_ encoding used in Bitcoin
+CB58 is similar to the `Base58Check`_ encoding used in Bitcoin
 
 * both can encode arbitrary an arbitrary byte sequence
 * both use the same alphabet
@@ -25,8 +25,9 @@ CB58 is similar to the `base58check`_ encoding used in Bitcoin
 
 they differ in the following respects
 
-* CB58 uses the final 4 bytes of `SHA256(msg)` as the checksum.
-  base58check uses the first 4 bytes of `SHA256(SHA256(msg)` as the checksum.
+* CB58 uses the final 4 bytes of ``SHA256(msg)`` as the checksum.
+  Base58Check uses the first 4 bytes of ``SHA256(SHA256(msg))`` as the
+  checksum.
 
 License
 -------
@@ -40,6 +41,7 @@ This package was created with `Cookiecutter`_ and the `audreyr/cookiecutter-pypa
 The ``b58decode()``, and ``b58encode()`` functions are from `base58.py`_, part of Bitcoin Core.
 
 .. _`AVA`: https://www.avalabs.org/
+.. _`Base58Check`: https://en.bitcoin.it/wiki/Base58Check_encoding
 .. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
 .. _`base58.py`: https://github.com/bitcoin/bitcoin/blob/master/contrib/testgen/base58.py
