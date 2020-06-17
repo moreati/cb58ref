@@ -34,14 +34,14 @@ class EncodeError(Error):
     pass
 
 
-def cb58checksum(v):
+def cb58checksum(v: bytes) -> bytes:
     """Return a 32-bit checksum of v, derived from the end of a SHA256 digest.
     """
     h = SHA256.new(v)
     return h.digest()[-4:]
 
 
-def cb58decode(v):
+def cb58decode(v: str) -> bytes:
     """Return the bytes encoded within the CB58 value v.
     """
     result = b58decode(v)
@@ -55,7 +55,7 @@ def cb58decode(v):
         raise ChecksumError
 
 
-def cb58encode(v):
+def cb58encode(v: bytes) -> str:
     """Return a CB58 encoded representation of v.
     """
     return b58encode(v + cb58checksum(v))
