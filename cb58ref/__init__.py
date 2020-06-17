@@ -2,7 +2,7 @@
 
 __author__ = 'Alex Willmer'
 __email__ = 'alex@moreati.org.uk'
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 
 from .base58 import SHA256, b58chars as cb58chars, b58decode, b58encode
 

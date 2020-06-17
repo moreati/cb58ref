@@ -2,6 +2,13 @@
 History
 =======
 
+0.2.0 (2020-06-17)
+------------------
+
+* Command line interface
+* Type hints
+* Unit tests
+
 0.1.0 (2020-06-15)
 ------------------
 
