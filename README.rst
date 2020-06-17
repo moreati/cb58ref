@@ -29,6 +29,32 @@ they differ in the following respects
   Base58Check uses the first 4 bytes of ``SHA256(SHA256(msg))`` as the
   checksum.
 
+Usage
+-----
+
+.. code:: python
+
+    >>> import cb58ref
+    >>> cb58ref.cb58encode(b"Hello world"):
+    '32UWxgjUJd9s6Kyvxjj1u'
+    >>> cb58ref.cb58decode('32UWxgjUJd9s6Kyvxjj1u')
+    b"Hello world"
+
+.. code::
+
+    $ printf "Hello world" | python3 -m cb58ref
+    32UWxgjUJd9s6Kyvxjj1u
+
+    $ printf "32UWxgjUJd9s6Kyvxjj1u" | python3 -m cb58ref -d
+    Hello world
+
+Installation
+------------
+
+.. code::
+
+    $ python3 -m pip install cb58ref
+
 License
 -------
 
