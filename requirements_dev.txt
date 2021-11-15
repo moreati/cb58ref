@@ -2,7 +2,7 @@ bump2version==0.5.11
 coverage==4.5.4
 flake8==3.7.8
 hypothesis==5.16.1
-pip==19.2.3
+pip==21.1
 pytest-runner==5.1
 pytest==4.6.5
 Sphinx==1.8.5
